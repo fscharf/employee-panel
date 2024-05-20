@@ -1,45 +1,47 @@
-# employee-panel
+# Employee Panel
 
-This template should help get you started developing with Vue 3 in Vite.
+Simple employee panel made with Vue.js, Pinia, TypeScript, Vue Router and Vitest.
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Node.js (v12.x or later)
+- yarn
 
 ## Project Setup
 
-```sh
-npm install
+1. Clone the repository and navigate to the project directory:
+
+```
+git clone https://github.com/fscharf/employee-api.git
+cd employee-api
+```
+
+2. Install dependencies:
+
+```
+yarn install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+yarn build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
+yarn test:unit
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run lint
+yarn lint
 ```
