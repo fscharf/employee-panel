@@ -16,25 +16,27 @@ const store = useStore()
 <template>
   <SimpleAccordion v-if="bulletinDetails">
     <template #title>
-      <div class="flex gap-8 items-center">
-        <SimpleLabel :label="bulletinCardConstants.id">
+      <div class="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-8">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.id">
           <span class="font-bold">
             {{ bulletinDetails.id }}
           </span>
         </SimpleLabel>
-        <SimpleLabel :label="bulletinCardConstants.start">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.start">
           {{ formatDateTime(bulletinDetails.startDate) }}
         </SimpleLabel>
-        <SimpleLabel :label="bulletinCardConstants.end">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.end">
           {{ formatDateTime(bulletinDetails.endDate) }}
         </SimpleLabel>
-        <SimpleLabel :label="bulletinCardConstants.totalHours">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.totalHours">
           {{ bulletinDetails.totalHours }}h
         </SimpleLabel>
       </div>
     </template>
     <section class="flex flex-col" v-if="bulletinDetails.appointments">
-      <h2 class="font-bold uppercase">{{ bulletinCardConstants.activities }}</h2>
+      <h2 class="font-bold uppercase text-sm md:text-base">
+        {{ bulletinCardConstants.activities }}
+      </h2>
       <div
         v-for="(appointment, index) in bulletinDetails.appointments"
         :key="appointment.id"
@@ -45,13 +47,17 @@ const store = useStore()
           }
         ]"
       >
-        <SimpleLabel :label="bulletinCardConstants.id">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.id">
           {{ appointment.id }}
         </SimpleLabel>
-        <SimpleLabel :label="bulletinCardConstants.date">
+        <SimpleLabel class="text-xs md:text-base" :label="bulletinCardConstants.date">
           {{ formatDateTime(appointment.date) }}
         </SimpleLabel>
-        <SimpleLabel :label="bulletinCardConstants.activity" v-if="store.activities.length">
+        <SimpleLabel
+          class="text-xs md:text-base"
+          :label="bulletinCardConstants.activity"
+          v-if="store.activities.length"
+        >
           <span class="flex items-center gap-2">
             <div
               class="rounded-full w-4 h-4"
